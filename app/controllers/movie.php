@@ -25,7 +25,7 @@ class Movie extends Controller {
         // Check if search results are found
         if (!empty($movies)) {
             // Render the results view with the movies data
-            $this->view->render('movie/results', ['movies' => $movies]);
+            $this->view->render('movies/results', ['movies' => $movies]);
         } else {
             // No movies found
             echo "No movies found for '{$movie_title}'.";

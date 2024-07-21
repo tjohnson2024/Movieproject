@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Omdb {
 
     protected $base_url = 'http://www.omdbapi.com/';
@@ -23,8 +25,11 @@ class Omdb {
             // Return movie title to indicate success
             return $movieTitle;
         } else {
+            $this->view('movies/results', ['movies' => $movie]);
             // Return null if no results or error
             return null;
+            header("Location: /results.php");
+            exit;
         }
     }
 
@@ -40,6 +45,8 @@ class Omdb {
         // Check if the response is successful ('Response' => 'True')
         if (isset($data['Response']) && $data['Response'] == 'True') {
             return $data; // Return movie details as associative array
+            header("Location: /results.php");
+            exit;
         } else {
             return null; // Return null if movie details not found or error
         }

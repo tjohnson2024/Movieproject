@@ -1,7 +1,10 @@
-
+ <?php require_once 'app/core/Controller.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search Results</title>
@@ -28,6 +31,7 @@
     <h1>Movie Search Results</h1>
 
     <?php foreach ($data['movies'] as $movie): ?>
+
         <div class="movie">
             <h2><?php echo htmlspecialchars($movie['Title']); ?> (<?php echo $movie['Year']; ?>)</h2>
             <p><strong>Genre:</strong> <?php echo htmlspecialchars($movie['Genre']); ?></p>
